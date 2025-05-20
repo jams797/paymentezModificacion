@@ -112,6 +112,7 @@ public class Paymentez{
     public static void addCard(Context mContext, @NonNull final String uid, @NonNull final String email, @NonNull final Card card, @NonNull final TokenCallback callback) {
 
         paymentezService = PaymentezClient.getClient(mContext, TEST_MODE, PAYMENTEZ_CLIENT_APP_CODE, PAYMENTEZ_CLIENT_APP_KEY).create(PaymentezService.class);
+//        paymentezService = PaymentezClient.getClient(mContext, TEST_MODE, "NUVEITEST-EC-CLIENT", "n9MXGkf8uR8PkDlsNgd3SNXO5MnvQe").create(PaymentezService.class);
         User user = new User();
         user.setId(uid);
         user.setEmail(email);

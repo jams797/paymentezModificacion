@@ -24,6 +24,7 @@ public class PaymentezUtils {
         Long tsLong = System.currentTimeMillis()/1000;
         String auth_timestamp = tsLong.toString();
         String string_auth_token = paymentez_client_app_code + ";" + auth_timestamp + ";" + getUniqToken(auth_timestamp, app_client_key);
+        //String string_auth_token = "NUVEITEST-EC-SERVER" + ";" + auth_timestamp + ";" + getUniqToken(auth_timestamp, "aiwWdCUZgFpmQTlDDlSHI13NlznjQX");
         String auth_token = Base64.encodeToString(string_auth_token.getBytes(), Base64.NO_WRAP);
         return auth_token;
     }

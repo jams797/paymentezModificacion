@@ -14,13 +14,15 @@ public class Constants {
     public static boolean PAYMENTEZ_IS_TEST_MODE = true;
 
     //Ask the Paymentez team for it
-    public static String PAYMENTEZ_CLIENT_APP_CODE = "IOS-CO-CLIENT";
+    //public static String PAYMENTEZ_CLIENT_APP_CODE = "NUVEITEST-EC-SERVER";
+    public static String PAYMENTEZ_CLIENT_APP_CODE = "NUVEITEST-EC-CLIENT";
 
     //Ask the Paymentez team for it.
-    public static String PAYMENTEZ_CLIENT_APP_KEY = "AKKqsezFDHtanNv1G0ARyxb8DiYARE";
+    //public static String PAYMENTEZ_CLIENT_APP_KEY = "aiwWdCUZgFpmQTlDDlSHI13NlznjQX";
+    public static String PAYMENTEZ_CLIENT_APP_KEY = "n9MXGkf8uR8PkDlsNgd3SNXO5MnvQe";
 
     //Backend Deployed from https://github.com/paymentez/example-java-backend
-    public static String BACKEND_URL = "https://example-paymentez-backend.herokuapp.com";
+    public static String BACKEND_URL = "https://ccapi-stg.paymentez.com";
 
 
 }

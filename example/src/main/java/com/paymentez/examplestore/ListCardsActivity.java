@@ -18,11 +18,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.paymentez.android.model.Card;
+import com.paymentez.android.rest.PaymentezClient;
+import com.paymentez.android.rest.PaymentezService;
 import com.paymentez.android.rest.model.ErrorResponse;
+import com.paymentez.android.rest.model.GetCardsResponse;
 import com.paymentez.examplestore.rest.RetrofitFactory;
 import com.paymentez.examplestore.rest.BackendService;
 import com.paymentez.examplestore.rest.model.DeleteCardResponse;
-import com.paymentez.examplestore.rest.model.GetCardsResponse;
+//import com.paymentez.examplestore.rest.model.GetCardsResponse;
 import com.paymentez.examplestore.utils.Alert;
 import com.paymentez.examplestore.utils.Constants;
 import com.paymentez.examplestore.utils.MyCardAdapter;
@@ -98,7 +101,10 @@ public class ListCardsActivity extends AppCompatActivity {
         pd.setMessage("");
         pd.show();
 
-        backendService.getCards(Constants.USER_ID).enqueue(new Callback<GetCardsResponse>() {
+        //PaymentezService paymentezService = PaymentezClient.getClient(mContext, Constants.PAYMENTEZ_IS_TEST_MODE, Constants.PAYMENTEZ_CLIENT_APP_CODE, Constants.PAYMENTEZ_CLIENT_APP_KEY).create(PaymentezService.class);
+        PaymentezService paymentezService2 = PaymentezClient.getClient(mContext, Constants.PAYMENTEZ_IS_TEST_MODE, "NUVEITEST-EC-SERVER", "aiwWdCUZgFpmQTlDDlSHI13NlznjQX").create(PaymentezService.class);
+        //backendService.getCards(Constants.USER_ID).enqueue(new Callback<GetCardsResponse>() {
+        paymentezService2.cardList(Constants.USER_ID).enqueue(new Callback<GetCardsResponse>() {
             @Override
             public void onResponse(Call<GetCardsResponse> call, Response<GetCardsResponse> response) {
                 pd.dismiss();

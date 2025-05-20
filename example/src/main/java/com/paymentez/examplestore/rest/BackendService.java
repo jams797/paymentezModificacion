@@ -18,11 +18,14 @@ import retrofit2.http.Query;
 
 public interface BackendService {
 
-    @GET("/get-cards")
+    //@GET("/get-cards")
+    @GET("/v2/card/list")
     Call<GetCardsResponse> getCards(@Query("uid") String uid);
 
     @FormUrlEncoded
-    @POST("/create-charge")
+
+//    @POST("/create-charge")
+    @POST("/v2/transaction/debit")
     Call<CreateChargeResponse> createCharge(@Field("uid") String uid, @Field("session_id") String session_id,
                                             @Field("token") String token, @Field("amount") double amount,
                                             @Field("dev_reference") String dev_reference, @Field("description") String description);
